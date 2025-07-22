@@ -1,0 +1,142 @@
+[
+  {
+    "id": "1",
+    "nombre": "Inyección SQL",
+    "riesgo": "Crítico",
+    "fecha": "02/04/2024",
+    "descripcion": "Permite a atacantes ejecutar comandos SQL arbitrarios en la base de datos a través de entradas de usuario no validadas.",
+    "categoria": "SQL Injection",
+    "soluciones": [
+      "Usar sentencias preparadas (prepared statements).",
+      "Validar y sanitizar todas las entradas de usuario.",
+      "Aplicar principios de menor privilegio en la base de datos."
+    ],
+    "recomendaciones": "Implementar controles de acceso, monitorear logs y mantener el software actualizado."
+  },
+  {
+    "id": "2",
+    "nombre": "Configuración incorrecta",
+    "riesgo": "Alto",
+    "fecha": "28/03/2024",
+    "descripcion": "Errores de configuración en la infraestructura o el software que exponen servicios, credenciales o datos sensibles.",
+    "categoria": "Configuración",
+    "soluciones": [
+      "Revisar configuraciones por defecto.",
+      "Eliminar servicios y puertos innecesarios.",
+      "Implementar configuraciones seguras y revisarlas periódicamente."
+    ],
+    "recomendaciones": "Auditar la infraestructura regularmente y aplicar políticas de seguridad robustas."
+  },
+  {
+    "id": "3",
+    "nombre": "XSS",
+    "riesgo": "Alto",
+    "fecha": "27/03/2024",
+    "descripcion": "Inyección de scripts maliciosos del lado del cliente en páginas web vistas por otros usuarios, robando información o controlando la sesión.",
+    "categoria": "XSS",
+    "soluciones": [
+      "Escapar y sanitizar entradas y salidas de usuario.",
+      "Usar Content Security Policy (CSP).",
+      "Evitar insertar contenido HTML sin validación."
+    ],
+    "recomendaciones": "Mantener librerías actualizadas y educar al equipo sobre buenas prácticas de seguridad."
+  },
+  {
+    "id": "4",
+    "nombre": "Exposición de datos sensibles",
+    "riesgo": "Medio",
+    "fecha": "28/03/2024",
+    "descripcion": "Almacenamiento o transmisión de información confidencial sin la protección adecuada (cifrado, hashing), dejándola vulnerable a ataques.",
+    "categoria": "Datos Sensibles",
+    "soluciones": [
+      "Cifrar datos en tránsito y en reposo.",
+      "Utilizar algoritmos criptográficos seguros.",
+      "Limitar el acceso a información sensible."
+    ],
+    "recomendaciones": "Auditar el manejo de datos sensibles y capacitar al personal sobre su protección."
+  },
+  {
+    "id": "5",
+    "nombre": "Falsificación de petición en sitios cruzados",
+    "riesgo": "Medio",
+    "fecha": "25/03/2024",
+    "descripcion": "Engaña al navegador de la víctima para que envíe una solicitud HTTP no deseada a una aplicación web en la que el usuario está autenticado.",
+    "categoria": "CSRF",
+    "soluciones": [
+      "Utilizar tokens CSRF en formularios.",
+      "Verificar cabeceras HTTP referer/origin.",
+      "Implementar SameSite cookies."
+    ],
+    "recomendaciones": "Educar a los desarrolladores sobre CSRF y revisar que todos los formularios estén protegidos."
+  },
+  {
+    "id": "6",
+    "nombre": "Uso de componente vulnerable",
+    "riesgo": "Bajo",
+    "fecha": "24/03/2024",
+    "descripcion": "Utilización de bibliotecas, frameworks u otros módulos de software con vulnerabilidades conocidas que pueden ser explotadas.",
+    "categoria": "Dependencias",
+    "soluciones": [
+      "Mantener actualizadas todas las dependencias.",
+      "Usar herramientas de escaneo de vulnerabilidades.",
+      "Evitar usar software sin mantenimiento activo."
+    ],
+    "recomendaciones": "Establecer un proceso de revisión continua de dependencias y aplicar parches de seguridad oportunamente."
+  },
+  {
+    "id": "7",
+    "nombre": "Configuración incorrecta",
+    "riesgo": "Bajo",
+    "fecha": "23/03/2024",
+    "descripcion": "Instalación de configuraciones por defecto inseguras, gestión de errores detallada, o directorios no protegidos que pueden ser explotados.",
+    "categoria": "Configuración",
+    "soluciones": [
+      "Deshabilitar configuraciones de desarrollo en producción.",
+      "Restringir el acceso a rutas administrativas.",
+      "Ocultar mensajes de error detallados."
+    ],
+    "recomendaciones": "Seguir buenas prácticas de configuración y realizar pruebas de seguridad antes del despliegue."
+  },
+  {
+    "id": "8",
+    "nombre": "XSS",
+    "riesgo": "Bajo",
+    "fecha": "22/03/2024",
+    "descripcion": "Inyección de código malicioso a través de entradas que no son validadas correctamente, afectando a otros usuarios.",
+    "categoria": "XSS",
+    "soluciones": [
+      "Validar y escapar entradas del usuario.",
+      "Evitar uso innecesario de `innerHTML`.",
+      "Aplicar políticas de seguridad de contenido (CSP)."
+    ],
+    "recomendaciones": "Revisar todos los puntos de entrada de datos y aplicar filtros apropiados."
+  },
+  {
+    "id": "9",
+    "nombre": "Uso de componente vulnerable",
+    "riesgo": "Bajo",
+    "fecha": "21/03/2024",
+    "descripcion": "Inclusión de software de terceros con fallos de seguridad ya publicados y explotables.",
+    "categoria": "Dependencias",
+    "soluciones": [
+      "Actualizar constantemente paquetes y librerías.",
+      "Revisar las notas de seguridad de los proveedores.",
+      "Evitar dependencias innecesarias."
+    ],
+    "recomendaciones": "Automatizar el monitoreo de paquetes con herramientas como Snyk o npm audit."
+  },
+  {
+    "id": "10",
+    "nombre": "Validación de entrada insuficiente",
+    "riesgo": "Crítico",
+    "fecha": "20/03/2024",
+    "descripcion": "Falta de validación o sanitización adecuada de los datos de entrada del usuario, permitiendo la manipulación de la aplicación.",
+    "categoria": "Validación",
+    "soluciones": [
+      "Implementar validaciones del lado del cliente y servidor.",
+      "Utilizar librerías de validación robustas.",
+      "Evitar confiar en datos de entrada sin verificar."
+    ],
+    "recomendaciones": "Estandarizar las validaciones y testear los puntos críticos de entrada de datos."
+  }
+]
